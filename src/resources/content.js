@@ -214,6 +214,15 @@ const work = {
   // All projects will be listed on the /home and /work routes
 };
 
+const contactus = {
+  path: "/contact",
+  label: "Contact",
+  title: `Contact`,
+  description: `Contact Us `,
+  // Create new project pages by adding a new .mdx file to app/blog/posts
+  // All projects will be listed on the /home and /work routes
+};
+
 const gallery = {
   path: "/gallery",
   label: "Gallery",
@@ -265,4 +274,4 @@ const gallery = {
   ],
 };
 
-export { person, social, newsletter, home, about, blog, work, gallery };
+export { person, social, newsletter, home, about, blog, work, gallery, contactus };

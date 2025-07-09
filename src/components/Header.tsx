@@ -8,6 +8,7 @@ import { Fade, Flex, Line, ToggleButton } from "@once-ui-system/core";
 import { routes, display, person, about, blog, work, gallery } from "@/resources";
 import { ThemeToggle } from "./ThemeToggle";
 import styles from "./Header.module.scss";
+import {contactus} from "@/resources/content";
 
 type TimeDisplayProps = {
   timeZone: string;
@@ -129,27 +130,52 @@ export const Header = () => {
                   />
                 </>
               )}
-              {routes["/gallery"] && (
-                <>
-                  <ToggleButton
-                    className="s-flex-hide"
-                    prefixIcon="gallery"
-                    href="/gallery"
-                    label={gallery.label}
-                    selected={pathname.startsWith("/gallery")}
-                  />
-                  <ToggleButton
-                    className="s-flex-show"
-                    prefixIcon="gallery"
-                    href="/gallery"
-                    selected={pathname.startsWith("/gallery")}
-                  />
-                </>
+              {/*{routes["/gallery"] && (*/}
+              {/*  <>*/}
+              {/*    <ToggleButton*/}
+              {/*      className="s-flex-hide"*/}
+              {/*      prefixIcon="gallery"*/}
+              {/*      href="/gallery"*/}
+              {/*      label={gallery.label}*/}
+              {/*      selected={pathname.startsWith("/gallery")}*/}
+              {/*    />*/}
+              {/*    <ToggleButton*/}
+              {/*      className="s-flex-show"*/}
+              {/*      prefixIcon="gallery"*/}
+              {/*      href="/gallery"*/}
+              {/*      selected={pathname.startsWith("/gallery")}*/}
+              {/*    />*/}
+              {/*  </>*/}
+              {/*)}*/}
+              {routes["/contact"] && (
+                  <>
+                    <div style={{'border': '2px solid ', 'borderRadius': 'var(--radius-xl)', 'padding': '4px', 'marginRight': '3px'}}>
+                      <ToggleButton
+                          className="s-flex-hide"
+                          prefixIcon="gallery"
+                          href="/gallery"
+                          label={contactus.label}
+                          selected={pathname.startsWith("/contact-us")}
+
+                      />
+                      <ToggleButton
+                          className="s-flex-show"
+                          prefixIcon="gallery"
+                          href="/gallery"
+                          selected={pathname.startsWith("/contact-us")}
+                      />
+                    </div>
+
+                  </>
               )}
               {display.themeSwitcher && (
                 <>
-                  <Line background="neutral-alpha-medium" vert maxHeight="24" />
-                  <ThemeToggle />
+                  <Line background="neutral-alpha-medium" vert maxHeight="24"  />
+                  <div style={{ 'marginLeft': '3px'}}>
+                    <ThemeToggle />
+                  </div>
+
+
                 </>
               )}
             </Flex>
